@@ -1,0 +1,67 @@
+<!-- Objective: Create an unordered movie list with unique styling for your favorite movie and an
+ordered list of cities with random styling applied to it.
+Instructions:
+● Use<ul>for the movie list and <ol> for the city list.
+● Apply custom CSS for individual items. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie and City Lists</title>
+    <style>
+        /* Unordered List for Movies */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .favorite {
+            font-weight: bold;
+            color: red;
+            text-decoration: underline;
+        }
+
+        /* Ordered List for Cities */
+        ol {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ol li {
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        ol li::before {
+            content: counter(item) ".";
+            position: absolute;
+            left: 0;
+            margin-right: 10px;
+        }
+
+        .city {
+            font-style: italic;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h2>Favorite Movies</h2>
+    <ul>
+        <li>Inception</li>
+        <li class="favorite">Interstellar</li>
+        <li>The Shawshank Redemption</li>
+    </ul>
+
+    <h2>Random Cities</h2>
+    <ol>
+        <li class="city">Tokyo</li>
+        <li class="city">Paris</li>
+        <li class="city">New York</li>
+    </ol>
+</body>
+</html>
